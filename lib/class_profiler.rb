@@ -53,7 +53,7 @@ module ClassProfiler
       base.send(:alias_method, "__#{method_name}", method_name)
 
       base.send(:define_method, method_name) do |*args, &block|
-        Benchmark.instance.start(label(__method__)){
+        Benchmark.instance.start(obj_label(__method__)){
           if block
             self.send("__#{method_name}", *args, &block)
           else

@@ -1,5 +1,5 @@
 module ObjectLabel
-  def label(method_name, notes = nil)
+  def obj_label(method_name, notes = nil)
     if notes
     "#{self.class.name}##{method_name} (#{notes})"
     else
